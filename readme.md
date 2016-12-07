@@ -27,6 +27,6 @@ Pour adapter mon header je me suis servis des fonction:
 * wp_register_script() et  wp_enqueue_script() pour le javascript  
 * get_stylesheet_directory_uri() sert à connaître le répertoire courant de mon theme. une fonctionnalité utile
 pour afficher mon logo:  
-** j'ai remplacé <img src="assets/img/logo.png" alt="Logo"> par  
-** <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png" alt="Logo">  
+** j'ai remplacé `<img src="assets/img/logo.png" alt="Logo">` par  
+** `<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png" alt="Logo">`  
 et mon logo invisible est apparu.
