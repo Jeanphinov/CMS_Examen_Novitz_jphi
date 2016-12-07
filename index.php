@@ -15,11 +15,20 @@ get_header(); ?>
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
 
-            <?php
-            while ( have_posts() ) : the_post();
-                get_template_part( 'content', 'page' );
-            endwhile;
-            ?>
+            <?php while (have_posts()) :
+                the_post();
+                ?>
+                <div class="jumbotron">
+                    <h1><?php echo get_the_title(); ?> est la page d'index</h1>
+                    <p class="lead">
+                        <?php
+                        echo get_the_content();
+                        ?>
+                    </p>
+                </div>
+                <?php
+
+            endwhile; ?>
 
         </main><!-- .site-main -->
     </div><!-- .content-area -->
