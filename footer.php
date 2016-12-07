@@ -11,34 +11,64 @@
 ?>
 
 <?php wp_footer(); ?>
-<div class="row row-newsletter">
-    <div class="container">
-        <div class="col-lg-4 col-md-4 col-sm-6 box-menu">
-            <h3>Sitemap</h3>
-            <?php
-            //menu
-            ?>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-6 box-menu">
-            <h3>Autres</h3>
-            <p>
-                Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le
-                Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla
-            </p>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-6 box-menu">
-            <h3>Infos</h3>
-            <p>
-                Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le
-                Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla
-            </p>
-        </div>
+<footer class="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h2>About </h2>
+
+                    <p>Theme Wordpress adapté du theme html "Superlist"
+                        <br/>Examen de Wordpress 2016,
+                        Institut Saint-Laurent Prosoc
+                        <br/>Professeur: Philippe Bloom</p>
+                </div><!-- /.col-* -->
+
+                <div class="col-sm-4">
+                    <h2>Contact Information</h2>
+
+                    <p>Novitz jean-Philippe<br/>
+                        Liège (Belgique)<br>
+                        <a href="#">hello@jiphi.be</a>
+                    </p>
+                </div><!-- /.col-* -->
+
+                <div class="col-sm-4">
+                    <h2>Stay Connected</h2>
+
+                    <ul class="social-links nav nav-pills">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                    </ul><!-- /.header-nav-social -->
+                </div><!-- /.col-* -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.footer-top -->
+
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-bottom-left">
+                &copy; 2015 All rights reserved. Created by <a href="#">Aviators</a>,
+                <br> 2016 Adapté en theme Wordpress par <a href=mailto: hello@jiphi.be> Jphi</a>.
+            </div><!-- /.footer-bottom-left -->
+
+            <div class="footer-bottom-right">
+                <ul class="nav nav-pills">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
+                    <li><a href="contact-1.html">Contact</a></li>
+                </ul><!-- /.nav -->
+            </div><!-- /.footer-bottom-right -->
+        </div><!-- /.container -->
     </div>
-</div>
-<footer>
-    <div class="container">
-        <p>&copy; 2016 Company, Inc.</p>
-    </div>
-</footer>
+</footer><!-- /.footer -->
+
+</div><!-- /.page-wrapper -->
 </body>
 </html>

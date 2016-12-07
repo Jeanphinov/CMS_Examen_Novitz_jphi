@@ -18,3 +18,15 @@ Bonus:
 - Filtre dans la liste des articles (filtrer par le nom via LIKE ou sur une catégorie ou ...)   
 - Formulaire de contact via AJAX (j'expliquerai cela en classe)  
 - Carrousel dynamique (gérable par le client grâce au ACF)  
+
+**notes**
+Pour mettre mes fichiers de départ je me suis basé sutr decoboots, merci Philippe.
+Je me suis aussi basé sur le codex Wordpress.
+Pour adapter mon header je me suis servis des fonction:
+* wp_enqueue_style() pour les stylesheets  
+* wp_register_script() et  wp_enqueue_script() pour le javascript  
+* get_stylesheet_directory_uri() sert à connaître le répertoire courant de mon theme. une fonctionnalité utile
+pour afficher mon logo:  
+** j'ai remplacé <img src="assets/img/logo.png" alt="Logo"> par  
+** <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png" alt="Logo">  
+et mon logo invisible est apparu.
