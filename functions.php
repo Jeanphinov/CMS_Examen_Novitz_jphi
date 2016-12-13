@@ -11,6 +11,7 @@ if (!function_exists('superlist_enqueue_styles')) {
         wp_enqueue_style('font-awesome', get_stylesheet_directory_uri() . '/assets/libraries/font-awesome/css/font-awesome.min.css');
 
     }
+
     add_action('wp_enqueue_scripts', 'superlist_enqueue_styles');
 
 }
@@ -39,10 +40,37 @@ if (!function_exists('superlist_enqueue_scripts')) {
             )
         );
     }
-    add_action('wp_enqueue_scripts', 'superlist_enqueue_scripts');
+
+
 }
 
+add_action('wp_enqueue_scripts', 'superlist_enqueue_scripts');
+/*
+function remove_admin_login_header()
+{
+    remove_action('wp_head', '_admin_bar_bump_cb');
+}
 
+add_action('get_header', 'remove_admin_login_header');*/
+
+function get_menu($name,$class = null)
+{
+
+    $menu = wp_get_nav_menu_object($name); // recupere le mmenu qui porte le nom $name
+    $menu_items = wp_get_nav_menu_items($menu->term_id);
+
+    $child = array();
+    foreach ($menu_items as $item) {
+        // menu_item_parent représente l'id de l'élément parent
+
+       /**
+        * il faut faut faire la création des sous-menus
+        */
+
+    }
+    include(locate_template('content/content-menu.php'));
+
+}
 
 wp_reset_postdata();
 

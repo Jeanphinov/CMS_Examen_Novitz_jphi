@@ -19,9 +19,12 @@ Bonus:
 - Formulaire de contact via AJAX (j'expliquerai cela en classe)  
 - Carrousel dynamique (gérable par le client grâce au ACF)  
 
-**notes**
+**Notes**  
+---------
+
 Pour mettre mes fichiers de départ je me suis basé sutr decoboots, merci Philippe.
-Je me suis aussi basé sur le codex Wordpress.
+Je me suis aussi basé sur le codex Wordpress.  
+
 Pour adapter mon header je me suis servis des fonction:
 * wp_enqueue_style() pour les stylesheets  
 * wp_register_script() et  wp_enqueue_script() pour le javascript  
@@ -30,3 +33,14 @@ pour afficher mon logo:
 ** j'ai remplacé `<img src="assets/img/logo.png" alt="Logo">` par  
 ** `<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png" alt="Logo">`  
 et mon logo invisible est apparu.
+  
+Création du Menu  
+----------------  
+
+* Création des pages Accueil, Notre actualité, Contactez-nous et à propos dans le back office 
+  'Main' est le nom du menu.  Important pour pouvoir le retrouver après.  
+*  la fonction 'get_menu($name,$class = null)' va aller chercher, lors de son appel le menu qui porte le nom $name
+  et qui sera afficher selon la classe $class.  class est mis à nul pour rendre ce parametre optionnel.   
+* '$menu = wp_get_nav_menu_object($name);' va recherche le menu  
+* '$menu_items = wp_get_nav_menu_items($menu->term_id);' va rechercher chaque élement du menu  
+* je parcours le menu et les élements du menu, les replaces dans une structure html.

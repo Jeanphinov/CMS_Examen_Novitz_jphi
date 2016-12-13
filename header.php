@@ -44,40 +44,11 @@ if (is_user_logged_in()) {
                             * j'ai mis items-1 items-2 etc pour avoir des points de repere
                             * etape suivante : dynamiser
                             -->
-                            <ul class="header-nav-primary nav nav-pills collapse navbar-collapse">
-                                <li class="active">
-                                    <a href="#">Menu-item 1 <i class="fa fa-chevron-down"></i></a>
 
-                                    <ul class="sub-menu">
-                                        <li><a href="index-video.html">Sous-menu</a></li>
+                               <?php
+                               echo get_menu('Main', 'header-nav-primary nav nav-pills collapse navbar-collapse');
 
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <a href="#">Menu-item 2 <i class="fa fa-chevron-down"></i></a>
-
-                                    <ul class="sub-menu">
-                                        <li><a href="listing-detail.html">Sous-menu</a></li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <a href="#">Menu-item 3<i class="fa fa-chevron-down"></i></a>
-
-                                    <ul class="sub-menu">
-                                        <li><a href="listing-detail.html">Sous-menu</a></li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <a href="#">Contact <i class="fa fa-chevron-down"></i></a>
-                                    <ul class="sub-menu">
-                                        <li><a href="contact-1.html">Contact v1</a></li>
-
-                                    </ul>
-                                </li>
-                            </ul>
+                               ?>
 
                             <button class="navbar-toggle collapsed" type="button" data-toggle="collapse"
                                     data-target=".header-nav-primary">
