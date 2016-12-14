@@ -6,6 +6,7 @@
     ?>
     <li><a href="<?php echo $item->url ?>">
             <?php echo $item->title; ?>
+            <i class="fa fa-chevron-down"></i>
         </a>
 
         <?php

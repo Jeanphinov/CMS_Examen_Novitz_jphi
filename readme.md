@@ -43,4 +43,12 @@ Création du Menu
   et qui sera afficher selon la classe $class.  class est mis à nul pour rendre ce parametre optionnel.   
 * '$menu = wp_get_nav_menu_object($name);' va recherche le menu  
 * '$menu_items = wp_get_nav_menu_items($menu->term_id);' va rechercher chaque élement du menu  
-* je parcours le menu et les élements du menu, les replaces dans une structure html.
+* je parcours le menu et les élements du menu, les replaces dans une structure html.  
+
+Templates  
+---------   
+
+Je commence a donner un contenu aux pages, créant un dosseir templates et au autant de templates que nécéssaire.  
+  
+  
+
