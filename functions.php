@@ -44,6 +44,8 @@ if (!function_exists('superlist_enqueue_scripts')) {
 
 }
 
+include ('extensions\Twitter.php');
+
 add_action('wp_enqueue_scripts', 'superlist_enqueue_scripts');
 /*
 function remove_admin_login_header()
@@ -53,7 +55,7 @@ function remove_admin_login_header()
 
 add_action('get_header', 'remove_admin_login_header');*/
 
-function get_menu($name,$class = null)
+function get_menu($name, $class = null)
 {
 
     $menu = wp_get_nav_menu_object($name); // recupere le mmenu qui porte le nom $name
@@ -63,12 +65,37 @@ function get_menu($name,$class = null)
     foreach ($menu_items as $item) {
         // menu_item_parent représente l'id de l'élément parent
 
-       /**
-        * il faut faut faire la création des sous-menus
-        */
+        /**
+         * il faut faut faire la création des sous-menus
+         */
 
     }
     include(locate_template('content/content-menu.php'));
+
+}
+
+function get_articles($n)
+{
+    $args = ['numberposts' => $n, 'order' => 'DESC', 'orderby' => 'date'];  // configure les options de ce que je veux récupérer
+    $articles_liste = get_posts($args); // je récupere les articles
+    $actu = array();
+    foreach ($articles_liste as $article) :
+        setup_postdata($article);
+       // var_dump($article);
+        /**
+         * je rempli mon tableau $actu avec les infos nécéssaires
+         */
+        $actu[]['titre'] = $article->post_title;
+        $actu[]['date'] = $article->post_date;
+        $actu[]['maj'] = $article->post_update;
+        $actu[]['url'] = get_permalink($article);
+        $actu[]['contenu'] = $article->post_content;
+       // var_dump($actu);
+
+    endforeach;
+    return $actu;
+
+
 
 }
 

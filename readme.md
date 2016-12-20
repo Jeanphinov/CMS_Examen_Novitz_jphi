@@ -50,5 +50,18 @@ Templates
 
 Je commence a donner un contenu aux pages, créant un dosseir templates et au autant de templates que nécéssaire.  
   
+Récupérer les x derniers posts
+------------------------------  
+
+**methode query_posts**  
+https://developer.wordpress.org/reference/functions/get_posts/ dans la doc
+setup_postdata() -> aide à mettre en forme le résultat.
+var_dump montra la longue liste des champs que contient l'article.  
+J'appelle la fonction depuis la vue 
+!! les articles récupéres ne sont pas dans un tableau mais dans un OBJET  !!  
   
+  
+
+
+
 
