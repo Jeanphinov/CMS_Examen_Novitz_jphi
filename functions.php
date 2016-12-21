@@ -44,16 +44,12 @@ if (!function_exists('superlist_enqueue_scripts')) {
 
 }
 
-include ('extensions\Twitter.php');
 
 add_action('wp_enqueue_scripts', 'superlist_enqueue_scripts');
-/*
-function remove_admin_login_header()
-{
-    remove_action('wp_head', '_admin_bar_bump_cb');
+/*function new_excerpt_length($length) {
+    return 10;
 }
-
-add_action('get_header', 'remove_admin_login_header');*/
+add_filter('excerpt_length', 'new_excerpt_length');*/
 
 function get_menu($name, $class = null)
 {
@@ -79,22 +75,26 @@ function get_articles($n)
     $args = ['numberposts' => $n, 'order' => 'DESC', 'orderby' => 'date'];  // configure les options de ce que je veux récupérer
     $articles_liste = get_posts($args); // je récupere les articles
     $actu = array();
+
     foreach ($articles_liste as $article) :
         setup_postdata($article);
-       // var_dump($article);
+        // var_dump($article);
         /**
          * je rempli mon tableau $actu avec les infos nécéssaires
          */
-        $actu[]['titre'] = $article->post_title;
-        $actu[]['date'] = $article->post_date;
-        $actu[]['maj'] = $article->post_update;
-        $actu[]['url'] = get_permalink($article);
-        $actu[]['contenu'] = $article->post_content;
-       // var_dump($actu);
+        $id = $article->ID;
+
+        $actu[$id]['titre'] = $article->post_title;
+        $actu[$id]['date'] = $article->post_date;
+        $actu[$id]['maj'] = $article->post_update;
+        $actu[$id]['url'] =  get_permalink($article);
+        //$actu[$id]['contenu'] = $contenu;
+        $actu[$id]['extrait'] =  get_the_excerpt($article);
+        $actu[$id]['categories'] = get_the_category($article);
+        // var_dump($actu);
 
     endforeach;
     return $actu;
-
 
 
 }
