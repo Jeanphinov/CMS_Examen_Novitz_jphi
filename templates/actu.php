@@ -7,9 +7,7 @@ get_header();
 ?>
 
 
-<div class="main-inner"> <!-- cette partie revient à chaque fois -> la déplacer vers les header et footer -->
-    <div class="container">
-        <div class="content">
+
             <h2 class="page-title"> Notre Actualité </h2>
 
 
@@ -17,14 +15,16 @@ get_header();
                 <?php
                 $actu = get_articles(5);
 
+
                 foreach ($actu as $article):
+                    if (empty($article['src'])) $article['src']=get_stylesheet_directory_uri()."/assets/img/tmp/product-1.jpg";
                     ?>
                     <div class="card-row">
                         <div class="card-row-inner">
-                            <div class="card-row-image" data-background-image="assets/img/tmp/product-1.jpg"
-                                 style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/img/tmp/product-1.jpg');">
+                            <div class="card-row-image" data-background-image="<?php echo $article['src'] ?>"
+                                 style="background-image: url('<?php echo $article['src'] ?>');">
                                 <div class="card-row-label">
-                                    <a href="listing-detail.html">Shop</a>
+                                    <a href="listing-detail.html"></a>
                                 </div>
                             </div> <!-- card  row image  -->
                             <div class="card-row-body">
@@ -41,11 +41,13 @@ get_header();
                                     <dt><?php echo $article['date'] ?></dt>
                                     <dd>Categorie</dd>
                                     <dt><?php foreach ($article['categories'] as $cat):
-                                            echo $cat->name." ";
+                                            echo $cat->name . " ";
                                         endforeach; ?></dt>
-                                    <dd>Location</dd>
-                                    <dt>New York / Village</dt>
-                                    <dd>Rating</dd>
+                                    <dd>Auteur</dd>
+                                    <dt><a href="mailto:<?php echo $article['email'] ?>">
+                                            <?php echo $article['auteur'] ?>
+                                        </a></dt>
+                                    <dd></dd>
                                     <dt>
                                 </dl>
                             </div>
@@ -56,9 +58,7 @@ get_header();
                 <?php endforeach; ?>
 
             </div> <!-- cards-row -->
-        </div><!-- /.content -->
-    </div><!-- /.container -->
-</div><!-- /.main-inner -->
+
 
 <?php
 

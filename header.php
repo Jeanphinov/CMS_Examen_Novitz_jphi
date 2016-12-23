@@ -64,3 +64,6 @@ if (is_user_logged_in()) {
             </div><!-- /.container -->
         </div><!-- /.header-wrapper -->
     </header><!-- /.header -->
+    <div class="main-inner">
+        <div class="container">
+            <div class="content">

@@ -11,6 +11,9 @@
 ?>
 
 <?php wp_footer(); ?>
+</div><!-- /.content -->
+</div><!-- /.container -->
+</div><!-- /.main-inner -->
 <footer class="footer">
     <div class="footer-top">
         <div class="container">

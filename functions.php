@@ -70,34 +70,6 @@ function get_menu($name, $class = null)
 
 }
 
-function get_articles($n)
-{
-    $args = ['numberposts' => $n, 'order' => 'DESC', 'orderby' => 'date'];  // configure les options de ce que je veux récupérer
-    $articles_liste = get_posts($args); // je récupere les articles
-    $actu = array();
-
-    foreach ($articles_liste as $article) :
-        setup_postdata($article);
-        // var_dump($article);
-        /**
-         * je rempli mon tableau $actu avec les infos nécéssaires
-         */
-        $id = $article->ID;
-
-        $actu[$id]['titre'] = $article->post_title;
-        $actu[$id]['date'] = $article->post_date;
-        $actu[$id]['maj'] = $article->post_update;
-        $actu[$id]['url'] =  get_permalink($article);
-        //$actu[$id]['contenu'] = $contenu;
-        $actu[$id]['extrait'] =  get_the_excerpt($article);
-        $actu[$id]['categories'] = get_the_category($article);
-        // var_dump($actu);
-
-    endforeach;
-    return $actu;
-
-
-}
-
+include_once ('src/getArticles.php');
 wp_reset_postdata();
 
