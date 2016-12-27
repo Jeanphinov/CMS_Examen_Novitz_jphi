@@ -9,9 +9,11 @@
  * Construction d'un Array qui sera renvoyé, c'est une façon de contrôler ce qui est disponible dans la vue.
  *
  * C'est içi qu'il faut faire les changements
+ * $n représente le nombre d'articles à récupérer, sa valeur est à null par défaut: si j'appelle la fonction sans préciser
+ * get_articles recupere tout
  */
 
-function get_articles($n)
+function get_articles($n=null)
 {
     $args = ['numberposts' => $n, 'order' => 'DESC', 'orderby' => 'date'];  // configure les options de ce que je veux récupérer
     $articles_liste = get_posts($args); // je récupere les articles

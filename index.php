@@ -6,31 +6,15 @@
  * Please note that this is the WordPress construct of pages and that
  * other "pages" on your WordPress site will use a different template.
  *
- * @package WordPress
- * @subpackage DecobootsTheme
- * @since Decoboots Theme 1.0.0
+ *  Cette page recupere tous les articles (je n'ai fourni le nombre) et appele le template pour affichage.
  */
-get_header(); ?>
+get_header();
 
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
+$actu = get_articles();
+include('templates/_partials/_liste-articles.php');
 
-            <?php while (have_posts()) :
-                the_post();
-                ?>
-                <div class="jumbotron">
-                    <h1><?php echo get_the_title(); ?> est la page d'index</h1>
-                    <p class="lead">
-                        <?php
-                        echo get_the_content();
-                        ?>
-                    </p>
-                </div>
-                <?php
+?>
 
-            endwhile; ?>
 
-        </main><!-- .site-main -->
-    </div><!-- .content-area -->
 
 <?php get_footer(); ?>
