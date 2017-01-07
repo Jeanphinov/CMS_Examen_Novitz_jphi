@@ -10,7 +10,7 @@
  *
  * C'est içi qu'il faut faire les changements
  * $n représente le nombre d'articles à récupérer, sa valeur est à null par défaut: si j'appelle la fonction sans préciser
- * get_articles recupere tout
+ * get_articles recupere toutI
  */
 
 function get_articles($n=null)

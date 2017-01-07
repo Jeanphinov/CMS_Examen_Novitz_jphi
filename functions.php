@@ -25,13 +25,19 @@ if (!function_exists('superlist_enqueue_scripts')) {
         // Pour éviter toute duplication de script Jquery, avant d'enregistrer le notre on désactive les autres
         wp_deregister_script('jquery');
         // Ajout du fichier main.min.js dans le head
-        wp_register_script('jquery', get_stylesheet_directory_uri() . '/assets/css/jquery.js', TRUE);
-        wp_register_script('map', get_stylesheet_directory_uri() . '/assets/css/map.js', TRUE);
-        wp_register_script('superlist', get_stylesheet_directory_uri() . '/assets/css/superlist.js', TRUE);
+        wp_register_script('jquery', get_stylesheet_directory_uri() . '/assets/js/jquery.js', TRUE);
+        wp_register_script('map', get_stylesheet_directory_uri() . '/assets/js/map.js', TRUE);
+        wp_register_script('carousel', get_stylesheet_directory_uri() . '/assets/libraries/owl.carousel/owl.carousel.min.js', TRUE);
+        wp_register_script('superlist', get_stylesheet_directory_uri() . '/assets/js/superlist.js', TRUE);
+        wp_register_script('bootstrap', get_stylesheet_directory_uri() . '/assets/js/bootstrap.min.js', TRUE);
+
 
         wp_enqueue_script('jquery');
         wp_enqueue_script('map');
+        wp_enqueue_script('carousel');
         wp_enqueue_script('superlist');
+        wp_enqueue_script('bootstrap');
+
         // Ajout de variable PHP dans le script js
         wp_localize_script(
             'main', 'Infos', array(
@@ -46,10 +52,7 @@ if (!function_exists('superlist_enqueue_scripts')) {
 
 
 add_action('wp_enqueue_scripts', 'superlist_enqueue_scripts');
-/*function new_excerpt_length($length) {
-    return 10;
-}
-add_filter('excerpt_length', 'new_excerpt_length');*/
+
 
 function get_menu($name, $class = null)
 {
@@ -71,5 +74,6 @@ function get_menu($name, $class = null)
 }
 
 include_once ('src/getArticles.php');
+include_once ('src/slider.php');
 wp_reset_postdata();
 
