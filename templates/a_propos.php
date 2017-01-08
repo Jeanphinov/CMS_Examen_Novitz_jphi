@@ -4,12 +4,17 @@
  *
  */
 get_header();
+$connecte = new Tweets();
+$infoTweeter = $connecte->getUserTimeline();
+
+
 ?>
 
 
 <div class="main-inner">
     <div class="container">
         <div class="content">
+           <?php include_once ('_partials/_tweets.php')?>
 
 
             <div class="mt-80">

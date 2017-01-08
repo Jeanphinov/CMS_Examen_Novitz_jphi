@@ -1,5 +1,8 @@
 <?php
 
+include 'extensions/Tweets.php';
+
+
 /*
  * Styles
  */
@@ -75,5 +78,6 @@ function get_menu($name, $class = null)
 
 include_once ('src/getArticles.php');
 include_once ('src/slider.php');
+
 wp_reset_postdata();
 

@@ -29,6 +29,7 @@ function get_articles($n=null)
 
         foreach (get_attached_media('image', $id) as $item):
             $actu[$id]['src'] = $item->guid;
+
         endforeach;
 
         $actu[$id]['titre'] = $article->post_title;
@@ -43,6 +44,8 @@ function get_articles($n=null)
 
 
     endforeach;
+
+
     return $actu;
 
 
