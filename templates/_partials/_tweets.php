@@ -1,3 +1,7 @@
+<!-- Bloc/template pour un affichage static dans une page.
+     Ce bloc recois les info et les affiches avec une mise en forme
+-->
+
 <div style="background-color:#1DA1F2; color:#F5F8FA !important;">
     <h2 style="color:#F5F8FA">Twitter</h2>
     <div class="row">

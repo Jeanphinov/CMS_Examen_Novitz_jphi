@@ -1,7 +1,26 @@
 <?php
 
 include 'extensions/Tweets.php';
+include 'src/get_twitter.php';
+include_once "templates/_partials/_tweets-post.php";
+add_action( 'after_setup_theme', 'pdw_theme_setup' );
 
+function pdw_theme_setup(){
+    load_theme_textdomain( 'slug-de-mes-traductions', get_template_directory() . '/languages' );
+}
+
+function menu_html(){
+    echo 'hello world';
+}
+
+function add_admin_menu()
+{
+    add_menu_page('Page Tweeter',
+        'page Tweeter',
+        'manage_options',
+        '/src/get_twitter','hello');
+}
+add_action('admin_menu', 'add_admin_menu');
 
 /*
  * Styles
@@ -76,8 +95,8 @@ function get_menu($name, $class = null)
 
 }
 
-include_once ('src/getArticles.php');
-include_once ('src/slider.php');
+include_once('src/getArticles.php');
+include_once('src/slider.php');
 
 wp_reset_postdata();
 
