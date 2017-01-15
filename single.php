@@ -1,18 +1,28 @@
-<?php get_header(); ?>
-
 <?php
-while (have_posts()) : the_post();
-    $title = get_the_title();
-    $content = get_the_content();
-    $picture_src = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
-    $picture = $picture_src[0];
-    $term = get_the_category();
-    $link_term = get_category_link($term[0]->term_id);
+/*
+ * Template qui permet d'afficher un article ou un autre type de contenu
+ */
+setlocale(LC_TIME, 'fr');
+get_header(); ?>
+
+<?php while (have_posts()) :
+    the_post();
+    $image=get_field('cover');
     ?>
 
+            <h1><?php echo  get_the_title(); ?> </h1>
+            <h2><?php echo get_field('sous_titre') ?></h2>
+            <img src="<?php echo $image['sizes']['thumbnail']; ?>">
+            <img src="<?php echo $image['sizes']['medium']; ?>">
+            <img src="<?php echo $image['sizes']['medium-large']; ?>">
+            <img src="<?php echo $image['sizes']['large']; ?>">
+            <!-- <img src="<?php echo $image['url']; ?>"> -->
+            <p class="lead">
+                <?php
+                echo get_the_content();
+                ?>
+            </p>
 
     <?php
-endwhile;
-?>
-
+endwhile; ?>
 <?php get_footer(); ?>

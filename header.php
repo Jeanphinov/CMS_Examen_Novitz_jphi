@@ -8,6 +8,9 @@
     <?php wp_head(); ?>
 </head>
 <?php
+
+
+
 $login_class = '';
 if (is_user_logged_in()) {
     $login_class = 'logged_margin';

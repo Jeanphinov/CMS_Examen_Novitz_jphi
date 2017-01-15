@@ -1,26 +1,37 @@
 <?php
-
+/*
+ * Twitter part
+ */
 include 'extensions/Tweets.php';
 include 'src/get_twitter.php';
 include_once "templates/_partials/_tweets-post.php";
-add_action( 'after_setup_theme', 'pdw_theme_setup' );
-
-function pdw_theme_setup(){
-    load_theme_textdomain( 'slug-de-mes-traductions', get_template_directory() . '/languages' );
-}
-
-function menu_html(){
-    echo 'hello world';
-}
-
 function add_admin_menu()
 {
     add_menu_page('Page Tweeter',
         'page Tweeter',
         'manage_options',
-        '/src/get_twitter','hello');
+        '/src/get_twitter', 'my_tweets');
 }
+
 add_action('admin_menu', 'add_admin_menu');
+/*
+ *  fin Twitter Part
+ */
+
+function la_date()
+{
+    $date=Date('d F Y');
+    return date_i18n( get_option( 'date_format' ), strtotime( $date ) );
+
+}
+
+add_action('after_setup_theme', 'pdw_theme_setup');
+
+function pdw_theme_setup()
+{
+    load_theme_textdomain('slug-de-mes-traductions', get_template_directory() . '/languages');
+}
+
 
 /*
  * Styles
