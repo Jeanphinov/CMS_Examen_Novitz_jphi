@@ -26,7 +26,7 @@ function get_articles($n=null)
          * je rempli mon tableau $actu avec les infos nécéssaires
          */
         $id = $article->ID;
-
+        $attachments = get_posts( $args );
         foreach (get_attached_media('image', $id) as $item):
             $actu[$id]['src'] = $item->guid;
 

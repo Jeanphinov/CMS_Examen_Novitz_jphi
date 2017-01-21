@@ -1,4 +1,10 @@
 <?php
+
+/*
+ * formulaire de contact
+ */
+include 'src/formulaire.php';
+
 /*
  * Twitter part
  */
@@ -25,13 +31,33 @@ function la_date()
 
 }
 
+/*
+* traduction
+*/
 add_action('after_setup_theme', 'pdw_theme_setup');
 
 function pdw_theme_setup()
 {
-    load_theme_textdomain('slug-de-mes-traductions', get_template_directory() . '/languages');
+    load_theme_textdomain('wp-theme-base-translate', get_template_directory() . '/languages');
 }
 
+/*
+ * Widget
+ */
+function wp_base_theme_widgets_init() {
+    for ($i = 1; $i <= 10; $i++) {
+        register_sidebar( array(
+            'name'          => __( 'Bloc de texte '.$i, 'wp-theme-base-translate' ),
+            'id'            => 'text-bloc-'.$i,
+            'description'   => __( 'Ajout d\'un bloc texte ou autre sur le site', 'wp-theme-base-translate' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        ) );
+    }
+}
+add_action( 'widgets_init', 'wp_base_theme_widgets_init' );
 
 /*
  * Styles
@@ -90,7 +116,7 @@ add_action('wp_enqueue_scripts', 'superlist_enqueue_scripts');
 function get_menu($name, $class = null)
 {
 
-    $menu = wp_get_nav_menu_object($name); // recupere le mmenu qui porte le nom $name
+    $menu = wp_get_nav_menu_object($name); // recupere le menu qui porte le nom $name
     $menu_items = wp_get_nav_menu_items($menu->term_id);
 
     $child = array();

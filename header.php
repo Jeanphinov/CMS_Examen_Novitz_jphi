@@ -10,6 +10,7 @@
 <?php
 
 
+global $message;
 
 $login_class = '';
 if (is_user_logged_in()) {
@@ -19,7 +20,7 @@ if (is_user_logged_in()) {
 <body <?php body_class(); ?>>
 <?php
 
-
+ _e('Accueil', 'wp-theme-base-translate');
 ?>
 <div class="page-wrapper">
 
