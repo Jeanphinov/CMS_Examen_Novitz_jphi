@@ -7,21 +7,23 @@ get_header(); ?>
 
 <?php while (have_posts()) :
     the_post();
-    $image=get_field('cover');
+    $image = get_field('cover');
     ?>
 
-            <h1><?php echo  get_the_title(); ?> </h1>
-            <h2><?php echo get_field('sous_titre') ?></h2>
-            <img src="<?php echo $image['sizes']['thumbnail']; ?>">
-            <img src="<?php echo $image['sizes']['medium']; ?>">
-            <img src="<?php echo $image['sizes']['medium-large']; ?>">
-            <img src="<?php echo $image['sizes']['large']; ?>">
-            <!-- <img src="<?php echo $image['url']; ?>"> -->
-            <p class="lead">
-                <?php
-                echo get_the_content();
-                ?>
-            </p>
+    <h1><?php the_post_thumbnail('large'); echo get_the_title(); ?> </h1>
+    <h2><?php echo get_field('sous_titre') ?></h2>
+    <?php  ?>
+
+    <img src="<?php echo $image['sizes']['thumbnail']; ?>">
+    <img src="<?php echo $image['sizes']['medium']; ?>">
+    <img src="<?php echo $image['sizes']['medium-large']; ?>">
+    <img src="<?php echo $image['sizes']['large']; ?>">
+    <!-- <img src="<?php echo $image['url']; ?>"> -->
+    <p class="lead">
+        <?php
+        echo get_the_content();
+        ?>
+    </p>
 
     <?php
 endwhile; ?>

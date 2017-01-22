@@ -50,27 +50,9 @@ Templates
 
 Je commence a donner un contenu aux pages, créant un dosseir templates et au autant de templates que nécéssaire.  
   
-Récupérer les x derniers posts
-------------------------------  
-
-**methode query_posts**  
-https://developer.wordpress.org/reference/functions/get_posts/ dans la doc
-setup_postdata() -> aide à mettre en forme le résultat.
-var_dump montra la longue liste des champs que contient l'article.  
-J'appelle la fonction depuis la vue 
-!! les articles récupéres ne sont pas dans un tableau mais dans un OBJET  !!  
-
-**get_the_excerpt**  permet de récupérer un 'extrait' de l'article pour donner envie de cliquer pour lire.  
-**get_the_category** recupere les categories de l'article.
-**get_the_date** recupere la date, l'avantage c'est que la date est déjà formatée  
-**get_the_attached_media**  je l'ai utilisé pour récupérer l'image  
-**get_the_author_meta**  utilisé pour récupérer le nom de l'auteur et son email
-
-J'ai placé la fonction getArticles dans un fichier externe pour plus de lisibilité.
-  
-  
-[SLIDER](/Documentation/slider.md)
-[FORMULAIRE](/Documentation/formulaire.md)
+* [DERNIERS ARTICLES](/Documentation/derniers_posts.md)  
+* [SLIDER](/Documentation/slider.md)  
+* [FORMULAIRE](/Documentation/formulaire.md)
 
 
 

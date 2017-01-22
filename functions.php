@@ -24,6 +24,11 @@ add_action('admin_menu', 'add_admin_menu');
  *  fin Twitter Part
  */
 
+/*
+ * ajout image à la une
+ */
+add_theme_support( 'post-thumbnails' );
+
 function la_date()
 {
     $date=Date('d F Y');
@@ -45,9 +50,9 @@ function pdw_theme_setup()
  * Widget
  */
 function wp_base_theme_widgets_init() {
-    for ($i = 1; $i <= 10; $i++) {
+    for ($i = 1; $i <= 3; $i++) {
         register_sidebar( array(
-            'name'          => __( 'Bloc de texte '.$i, 'wp-theme-base-translate' ),
+            'name'          => __( 'Element'.$i, 'wp-theme-base-translate' ),
             'id'            => 'text-bloc-'.$i,
             'description'   => __( 'Ajout d\'un bloc texte ou autre sur le site', 'wp-theme-base-translate' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',

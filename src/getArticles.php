@@ -26,11 +26,9 @@ function get_articles($n=null)
          * je rempli mon tableau $actu avec les infos nécéssaires
          */
         $id = $article->ID;
-        $attachments = get_posts( $args );
-        foreach (get_attached_media('image', $id) as $item):
-            $actu[$id]['src'] = $item->guid;
 
-        endforeach;
+        $temp=wp_get_attachment_image_src(get_post_thumbnail_id ($id ), 'medium');
+        $actu[$id]['src']=  $temp[0];
 
         $actu[$id]['titre'] = $article->post_title;
         //$actu[$id]['date'] = $article->post_date; fonctionne mais me fournit une date non formatée

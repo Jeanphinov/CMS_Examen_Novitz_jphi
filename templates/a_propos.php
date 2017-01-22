@@ -4,8 +4,12 @@
  *
  */
 get_header();
-$connecte = new Tweets();
-$infoTweeter = $connecte->getUserTimeline();
+/*
+ * dynamic_sidebar est la description su site éditable par le client
+ * text-bloc-1 est l'id du widget
+ */
+dynamic_sidebar( 'text-bloc-2' );
+
 
 
 ?>
@@ -14,7 +18,6 @@ $infoTweeter = $connecte->getUserTimeline();
 <div class="main-inner">
     <div class="container">
         <div class="content">
-           <?php include_once ('_partials/_tweets.php')?>
 
 
             <div class="mt-80">

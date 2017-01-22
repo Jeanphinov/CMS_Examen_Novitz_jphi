@@ -21,7 +21,10 @@ if (isset($_GET['succes']))
 
 $actu = get_articles();
 $slider = getImageForSlider();
+/* widget */
+
 dynamic_sidebar( 'text-bloc-1' );
+
 include('_partials/_slider.php');
 include('_partials/_liste-articles.php');
 
