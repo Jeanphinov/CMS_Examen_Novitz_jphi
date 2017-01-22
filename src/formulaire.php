@@ -40,7 +40,7 @@ function form_submit()
             $email = $_POST['email'];
             $nom = $_POST['nom'];
             $message = $_POST['message'];
-            $to = "novitz@gmail.com";
+            $to = "hello@jiphi.be";
 
             if (!empty($email) && !empty($nom) && !empty($message)) {
 

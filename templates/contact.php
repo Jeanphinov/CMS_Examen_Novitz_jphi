@@ -4,7 +4,7 @@
  *
  */
 get_header();
-_e('Accueil', 'slug-de-mes-traductions');
+
 ?>
 
 
@@ -12,13 +12,7 @@ _e('Accueil', 'slug-de-mes-traductions');
     <div class="container">
         <div class="content">
 
-            <?php if (isset($_GET['succes']))
-            {
-                ?>
-                <div class="alert alert-icon alert-success" role="alert">
-                    <?php echo $_GET['succes']?>
-                </div>
-            <?php }
+            <?php
             if (isset($_GET['erreur']))
             {
                 ?>

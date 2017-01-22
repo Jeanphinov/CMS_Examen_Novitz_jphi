@@ -69,7 +69,8 @@ J'appelle la fonction depuis la vue
 J'ai placé la fonction getArticles dans un fichier externe pour plus de lisibilité.
   
   
-[integration du slider](/Documentation/slider.md)
+[SLIDER](/Documentation/slider.md)
+[FORMULAIRE](/Documentation/formulaire.md)
 
 
 
