@@ -11,6 +11,8 @@ include 'src/formulaire.php';
 include 'extensions/Tweets.php';
 include 'src/get_twitter.php';
 include_once "templates/_partials/_tweets-post.php";
+
+
 function add_admin_menu()
 {
     add_menu_page('Page Tweeter',
