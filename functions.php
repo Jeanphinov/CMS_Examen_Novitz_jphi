@@ -119,8 +119,6 @@ if (!function_exists('superlist_enqueue_scripts')) {
             )
         );
     }
-
-
 }
 
 
@@ -136,10 +134,6 @@ function get_menu($name, $class = null)
     $child = array();
     foreach ($menu_items as $item) {
         // menu_item_parent représente l'id de l'élément parent
-
-        /**
-         * il faut faut faire la création des sous-menus
-         */
 
     }
     include(locate_template('content/content-menu.php'));
