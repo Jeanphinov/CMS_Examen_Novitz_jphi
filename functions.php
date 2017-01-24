@@ -81,9 +81,8 @@ if (!function_exists('superlist_enqueue_styles')) {
     function superlist_enqueue_styles()
     {
         // Ajout du fichier main.css dans le head
-        wp_enqueue_style('superlist', get_stylesheet_directory_uri() . '/assets/css/superlist.css');
         wp_enqueue_style('font-awesome', get_stylesheet_directory_uri() . '/assets/libraries/font-awesome/css/font-awesome.min.css');
-
+        wp_enqueue_style('superlist', get_stylesheet_directory_uri() . '/assets/css/superlist.css');
     }
 
     add_action('wp_enqueue_scripts', 'superlist_enqueue_styles');

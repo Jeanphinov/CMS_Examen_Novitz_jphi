@@ -1,0 +1,71 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-24 13:52+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: functions.php:75
+msgid "Ajout d'un bloc texte ou autre sur le site"
+msgstr ""
+
+#. Name of the template
+msgid "Accueil"
+msgstr ""
+
+#. Name of the template
+msgid "Actu"
+msgstr ""
+
+#. Name of the template
+msgid "Contact"
+msgstr ""
+
+#. Name of the theme
+msgid "CMS Examen Novitz Jphi"
+msgstr ""
+
+#. Description of the theme
+msgid "Examen de Wordpress - Theme"
+msgstr ""
+
+#. URI of the theme
+msgid "http://localhost/wordpress/wp_examen_jphi/"
+msgstr ""
+
+#. Author of the theme
+msgid "Novitz Jean-Philippe"
+msgstr ""
+
+msgid "Contactez-nous"
+msgstr ""
+
+msgid "Formulaire de contact"
+msgstr ""
+
+msgid "A propos"
+msgstr ""
+
+msgid "Qui sommes-nous"
+msgstr ""
+
+msgid "Edito"
+msgstr ""
+
+msgid "Cinq derniers articles"
+msgstr ""
+
+msgid "New message"
+msgstr ""
+
+msgid "Notre Acutalité"
+msgstr ""

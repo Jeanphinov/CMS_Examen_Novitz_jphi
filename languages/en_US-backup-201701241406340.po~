@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CMS Examen Novitz Jphi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-22 15:21+0000\n"
-"PO-Revision-Date: 2017-01-22 15:22+0000\n"
+"POT-Creation-Date: 2017-01-24 13:54+0000\n"
+"PO-Revision-Date: 2017-01-24 13:56+0000\n"
 "Last-Translator: jphi <jeanphinov@gmail.com>\n"
 "Language-Team: English (United States)\n"
 "Language: en-US\n"
@@ -13,14 +13,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: functions.php:52
-msgid "Ajout d'un bloc texte ou autre sur le site"
-msgstr ""
-
 #. Name of the template
-#: header.php:23
 msgid "Accueil"
-msgstr ""
+msgstr "Home"
 
 #. URI of the theme
 msgid "http://localhost/wordpress/wp_examen_jphi/"
@@ -28,27 +23,49 @@ msgstr ""
 
 #. Author of the theme
 msgid "Novitz Jean-Philippe"
+msgstr "It's me"
+
+msgid "Contactez-nous"
+msgstr "Contact us"
+
+msgid "Formulaire de contact"
+msgstr "Contact Fom"
+
+msgid "Qui sommes-nous"
+msgstr "Who are We ?"
+
+msgid "Cinq derniers articles"
+msgstr "Last Five Posts"
+
+msgid "New message"
 msgstr ""
 
-msgid "Edito"
-msgstr "blabla"
+msgid "Notre Acutalité"
+msgstr "News"
+
+#: functions.php:75
+msgid "Ajout d'un bloc texte ou autre sur le site"
+msgstr "Add Text or Block"
 
 #. Name of the template
 msgid "Actu"
-msgstr "zzz"
-
-#. Name of the template
-msgid "A propos"
-msgstr "zzzz"
+msgstr "News"
 
 #. Name of the template
 msgid "Contact"
-msgstr "zzzzz"
+msgstr "Contact US"
 
 #. Name of the theme
 msgid "CMS Examen Novitz Jphi"
-msgstr "zzzzzz"
+msgstr "Jeanphi exam"
 
 #. Description of the theme
 msgid "Examen de Wordpress - Theme"
-msgstr "zzzzzzzzz"
+msgstr "Theme Wordpress Exam"
+
+#. Name of the template
+msgid "A propos"
+msgstr "About"
+
+msgid "Edito"
+msgstr "Intro"
