@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-22 15:21+0000\n"
+"POT-Creation-Date: 2017-01-24 14:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,21 +14,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: functions.php:52
+#: functions.php:75
 msgid "Ajout d'un bloc texte ou autre sur le site"
 msgstr ""
 
 #. Name of the template
-#: header.php:23
 msgid "Accueil"
 msgstr ""
 
 #. Name of the template
 msgid "Actu"
-msgstr ""
-
-#. Name of the template
-msgid "A propos"
 msgstr ""
 
 #. Name of the template
@@ -51,5 +46,26 @@ msgstr ""
 msgid "Novitz Jean-Philippe"
 msgstr ""
 
+msgid "Contactez-nous"
+msgstr ""
+
+msgid "Formulaire de contact"
+msgstr ""
+
+msgid "A propos"
+msgstr ""
+
+msgid "Qui sommes-nous"
+msgstr ""
+
 msgid "Edito"
+msgstr ""
+
+msgid "Cinq derniers articles"
+msgstr ""
+
+msgid "C’est le jours de l’examen"
+msgstr ""
+
+msgid "Notre Acutalité"
 msgstr ""

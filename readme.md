@@ -49,10 +49,12 @@ Templates
 ---------   
 
 Je commence a donner un contenu aux pages, créant un dosseir templates et au autant de templates que nécéssaire.  
-  
+ 
 * [DERNIERS ARTICLES](/Documentation/derniers_posts.md)  
 * [SLIDER](/Documentation/slider.md)  
 * [FORMULAIRE](/Documentation/formulaire.md)
+* [pagination](/Documentation/pagination.md)
+* [traduction](/Documentation/traduction.md)
 
 
 

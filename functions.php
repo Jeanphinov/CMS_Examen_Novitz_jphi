@@ -1,5 +1,22 @@
 <?php
 
+/***************************************************************************************************************
+ *  Page functions.php
+ *  je place ici les fonction à utiliser dans  mon site
+ *  j'inclus les styles et les css ou d'autres fichiers
+ *
+ *  Les choses qui prennent trop de place ou que je veux isoler je les met dans un de ces répertoires
+ *   - /src ou /extension pour les methodes php
+ *   - /templates ou /templates/_partials pour ce qui est de la mise en forme
+ *
+ *  J'essaie de mettre un maximum de commentaires
+ *
+ ****************************************************************************************************************/
+/*
+ * inclus Nav
+ */
+include ('src/getNav.php');
+
 /*
  * formulaire de contact
  */
@@ -29,12 +46,12 @@ add_action('admin_menu', 'add_admin_menu');
 /*
  * ajout image à la une
  */
-add_theme_support( 'post-thumbnails' );
+add_theme_support('post-thumbnails');
 
 function la_date()
 {
-    $date=Date('d F Y');
-    return date_i18n( get_option( 'date_format' ), strtotime( $date ) );
+    $date = Date('d F Y');
+    return date_i18n(get_option('date_format'), strtotime($date));
 
 }
 
@@ -51,20 +68,11 @@ function pdw_theme_setup()
 /*
  * Widget
  */
-function wp_base_theme_widgets_init() {
-    for ($i = 1; $i <= 3; $i++) {
-        register_sidebar( array(
-            'name'          => __( 'Element'.$i, 'wp-theme-base-translate' ),
-            'id'            => 'text-bloc-'.$i,
-            'description'   => __( 'Ajout d\'un bloc texte ou autre sur le site', 'wp-theme-base-translate' ),
-            'before_widget' => '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h2 class="widget-title">',
-            'after_title'   => '</h2>',
-        ) );
-    }
-}
-add_action( 'widgets_init', 'wp_base_theme_widgets_init' );
+global $n;
+
+include ('src/widget.php');
+
+add_action('widgets_init', 'wp_base_theme_widgets_init');
 
 /*
  * Styles

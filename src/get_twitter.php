@@ -21,8 +21,11 @@ function my_tweets()
 
     $article['post_status'] = 'publish';
 
-    $post_id = wp_insert_post($article, true);
-    // insertion de l'article.
+    if ($post_id = wp_insert_post($article, true))
+        // insertion de l'article.
+        echo '<i class="fa fa-check" style="font-size: 50px;" aria-hidden="true"></i>
+<br />Article Publié !';
+    else echo 'erreur';
 
 
 }

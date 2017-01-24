@@ -13,9 +13,14 @@
  * get_articles recupere toutI
  */
 
-function get_articles($n=null)
+function get_articles($ppp=null, $n=5, $offset=0)
 {
-    $args = ['numberposts' => $n, 'order' => 'DESC', 'orderby' => 'date'];  // configure les options de ce que je veux récupérer
+    $args = ['posts_per_page' => $n,
+	         'offset'=> $offset,
+             'numberposts' => $ppp,
+             'order' => 'DESC',
+             'orderby' => 'date'
+    ];  // configure les options de ce que je veux récupérer
     $articles_liste = get_posts($args); // je récupere les articles
     $actu = array();
 
@@ -41,10 +46,11 @@ function get_articles($n=null)
         $actu[$id]['email'] = get_the_author_meta('user_email');
 
 
+
     endforeach;
 
 
-    return $actu;
+return $actu;
 
 
 }

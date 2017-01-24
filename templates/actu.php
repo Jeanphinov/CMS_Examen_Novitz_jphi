@@ -8,11 +8,15 @@ get_header();
 
 ?>
 
-
-<h2 class="page-title"> Notre Actualité </h2>
+<div class="document-title">
+    <h1> <?php _e('Notre Actualité', 'wp-theme-base-translate'); ?></h1>
+    <ul class="breadcrumb">
+</div>
+<h2 class="page-title">  <?php _e('Cinq derniers articles', 'wp-theme-base-translate'); ?></h2>
 
 
 <?php
+
 
 $actu = get_articles(5);
 

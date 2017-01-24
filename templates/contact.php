@@ -6,7 +6,10 @@
 get_header();
 
 ?>
-
+<div class="document-title">
+    <h1><?php _e('Contactez-nous', 'wp-theme-base-translate'); ?></h1>
+    <ul class="breadcrumb">
+</div>
 
 <div class="main-inner">
     <div class="container">
@@ -23,7 +26,7 @@ get_header();
             ?>
             <div class="mt-80">
                 <div class="page-header">
-                    <h2 class="page-title">Contactez-nous</h2>
+                    <h2 class="page-title"> <?php _e('Formulaire de contact', 'wp-theme-base-translate'); ?></h2>
                     <div class="row">
                         <div class="col-md-2">
                         </div>
