@@ -18,14 +18,27 @@ get_header();
 <?php
 
 
-$actu = get_articles(5);
-
-include('_partials/_liste-articles.php');
-
+$original_query = $wp_query;
+$wp_query = null;
+$args = ['posts_per_page' => 5,
+        'no_found_rows' => true];
+$wp_query = new WP_Query($args);
 ?>
+
+<div class="cards-row">
+
+
+    <?php if (have_posts()):
+        while (have_posts()) : the_post();
+
+            include('_partials/_card-row.php');
+            // ma vue est séparée pour etre réutilisée
+        endwhile;
+    endif; ?>
+
+</div> <!-- cards-row -->
 
 
 <?php
-
-get_footer();
-?>
+wp_reset_postdata();
+get_footer(); ?>

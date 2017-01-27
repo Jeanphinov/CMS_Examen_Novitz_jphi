@@ -6,7 +6,7 @@
  *  j'inclus les styles et les css ou d'autres fichiers
  *
  *  Les choses qui prennent trop de place ou que je veux isoler je les met dans un de ces répertoires
- *   - /src ou /extension pour les methodes php
+ *   - /content ou /extension pour les methodes php
  *   - /templates ou /templates/_partials pour ce qui est de la mise en forme
  *
  *  J'essaie de mettre un maximum de commentaires
@@ -15,18 +15,18 @@
 /*
  * inclus Nav
  */
-include ('src/getNav.php');
+include('content/getNav.php');
 
 /*
  * formulaire de contact
  */
-include 'src/formulaire.php';
+include 'content/formulaire.php';
 
 /*
  * Twitter part
  */
 include 'extensions/Tweets.php';
-include 'src/get_twitter.php';
+include 'content/get_twitter.php';
 include_once "templates/_partials/_tweets-post.php";
 
 
@@ -35,7 +35,7 @@ function add_admin_menu()
     add_menu_page('Page Tweeter',
         'page Tweeter',
         'manage_options',
-        '/src/get_twitter', 'my_tweets');
+        '/content/get_twitter', 'my_tweets');
 }
 
 add_action('admin_menu', 'add_admin_menu');
@@ -70,7 +70,7 @@ function pdw_theme_setup()
  */
 global $n;
 
-include ('src/widget.php');
+include('content/widget.php');
 
 add_action('widgets_init', 'wp_base_theme_widgets_init');
 
@@ -140,8 +140,8 @@ function get_menu($name, $class = null)
 
 }
 
-include_once('src/getArticles.php');
-include_once('src/slider.php');
+include_once('content/getArticles.php');
+include_once('content/slider.php');
 
-wp_reset_postdata();
+//wp_reset_postdata();
 

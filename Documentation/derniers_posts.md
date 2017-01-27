@@ -1,34 +1,40 @@
 Récupérer les x derniers posts
 ------------------------------  
 
-**methode query_posts**  
-https://developer.wordpress.org/reference/functions/get_posts/ dans la doc
-setup_postdata() -> aide à mettre en forme le résultat.
-var_dump montra la longue liste des champs que contient l'article.  
-J'appelle la fonction depuis la vue 
-!! les articles récupéres ne sont pas dans un tableau mais dans un OBJET  !!  
+sur page d'accueil
+------------------
+```
+$paged = (get_query_var('page')) ? get_query_var('page') : 1;
+$original_query = $wp_query;
+$wp_query = null;
+$args = array('posts_per_page' => 5, 'paged' => $paged);
+$wp_query = new WP_Query($args);
+```
 
-**get_the_excerpt**  permet de récupérer un 'extrait' de l'article pour donner envie de cliquer pour lire.  
-**get_the_category** recupere les categories de l'article.
-**get_the_date** recupere la date, l'avantage c'est que la date est déjà formatée   
-**get_the_author_meta**  utilisé pour récupérer le nom de l'auteur et son email  
+Récupèrec la les posts en utlisant la $wp_query, petit hack pour ne pas avoirs de problèmes avec la pagination.
   
-Pour afficher mes derniers articles j'ai besoin d'afficher une vignette donc d'une __image à la une __ :
-* ```<?php add_theme_support( 'post-thumbnails' ); ?>``` dans le function.php permet d'ajouter la possibilité de mettre 
-une image à la une.
-* Fichier getArticles.php.  Dans la boucle qui récupère les x derniers articles j'ai placé le bout de code 
- ```
- $temp=wp_get_attachment_image_src(get_post_thumbnail_id ($id ), 'medium');
- $actu[$id]['src']=  $temp[0];
- ```
- - _get Attachment image src()_  est une fonction wordpress permettant de ne récupérer que l'url 'src' de l'image à la une
- - je le récupère et le met dans la variable $temp
- - la fonction get_attachment retourne un tableau de trois éléments: url, largeur, hauteur
- - je récupère le premier [0] qui est url
+```
+$args = array('posts_per_page' => 5, 'paged' => $paged);
+$wp_query = new WP_Query($args);
+```
+Fixe la limite à cinq pages à récupérer  à la fois.
+$paged est utile pour la pagination.
 
-J'ai placé la fonction getArticles dans un fichier externe pour plus de lisibilité.
-
-J'utilise deux fois cette fonction sans devoir dupliquer du code: une fois dans accueil.php une fois dans actu.php
-* avec deux lignes je récupère et affiche les x derniers articles où je veux.
-* ``` $actu = get_articles(5); ``` recupère les derniers article si le nbre n'est pas précisé il récupère tout
-* ``` include('_partials/_liste-articles.php'); ``` affiche les articles
+Dans ma booucle while ```while (have_posts()) : the_post();```
+J'intègre deux élément extérieurs.  
+  
+```include('_partials/_card-row.php'); ``` qui est la mise en forme en 'card' de chaque élément du résultat  
+ ```` include('_partials/_nav.php'); ``` qui est la navigation.  
+    
+Actu : récupérer seulement les cinq derniers articles
+-----------------------------------------------------  
+  
+ J'ai adapté la page accueil en modifiant:  
+ ```
+ $args = ['posts_per_page' => 5,
+         'no_found_rows' => true];
+ $wp_query = new WP_Query($args);
+ ```
+   
+ Ce changement est nécéssaire.  WP récupère cinq posts par page mais 'no_found_rows' à true
+ fait qu'il arrête de chercher.  Je n'affiche que cinq post et mon résultat ne compte que cinq posts.

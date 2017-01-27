@@ -5,13 +5,13 @@
 
 function format_post($article)
 {
-$madate=la_date();
+    $madate = la_date();
 
     $content = "
     <div class='mt-80'>
     <div class='page-header'>
         <h1>Derniers tweets</h1>
-        <p> Un petit aperçu de mes derniers tweets en date du ".$madate."</p>
+        <p> Un petit aperçu de mes derniers tweets en date du " . $madate . "</p>
     </div><!-- /.page-header -->
 
     <div class='row'>";
@@ -20,7 +20,7 @@ $madate=la_date();
         $content = $content . " <div class='col-sm-6'>
                 <div class='testimonial'>
                     <div class='testimonial-image'>
-                        <img src='".$article['photo_profil']."' alt=''>
+                        <img src='" . $article['photo_profil'] . "' alt=''>
                     </div><!-- /.testimonial-image -->
 
                     <div class='testimonial-inner'>

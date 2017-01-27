@@ -10,20 +10,10 @@ get_header();
     <h1><?php _e('Contactez-nous', 'wp-theme-base-translate'); ?></h1>
     <ul class="breadcrumb">
 </div>
-
+<?php include ('_partials/_flashbags.php') // affiche soit un message succes soit message erreurs ?>
 <div class="main-inner">
     <div class="container">
         <div class="content">
-
-            <?php
-            if (isset($_GET['erreur']))
-            {
-                ?>
-                <div class="alert alert-icon alert-danger" role="alert">
-                    <?php echo $_GET['erreur']?>
-                </div>
-            <?php }
-            ?>
             <div class="mt-80">
                 <div class="page-header">
                     <h2 class="page-title"> <?php _e('Formulaire de contact', 'wp-theme-base-translate'); ?></h2>

@@ -75,3 +75,9 @@ __ pour le content j'appelle le ficher [_tweets-post.php](../templates/_partials
 * crée une vue en intégrant ces tweets à une mise en forme html
 * renvoit le résultat
 
+```
+$attach_id = wp_insert_attachment($attachment, $filename, $post_id);
+set_post_thumbnail($post_id, $attach_id);
+```  
+ - crée un attachment en utilisant le logo Twitter
+ - met l'attachment comme image à la une
